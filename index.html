@@ -7,7 +7,53 @@
     <title>Clima</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="search">
+        <form id="search-form" class="search__form" role="search">
+          <label for="search-input" class="visually-hidden">Cidade</label>
+          <input
+            id="search-input"
+            class="search__input"
+            type="search"
+            name="city"
+            placeholder="Digite o nome da cidade"
+            autocomplete="off"
+          />
+          <button id="search-button" class="search__button" type="submit">Buscar</button>
+        </form>
+      </header>
+
+      <main id="weather-card" class="card">
+        <aside id="sidebar" class="sidebar">
+          <p id="temperature" class="sidebar__temperature"></p>
+          <p id="location" class="sidebar__location"></p>
+          <p id="current-date" class="sidebar__date"></p>
+          <p id="day-period" class="sidebar__period"></p>
+          <p id="condition" class="sidebar__condition"></p>
+        </aside>
+
+        <section id="details" class="details" aria-label="Detalhes do clima">
+          <dl class="details__grid">
+            <div class="details__item">
+              <dt class="details__label">Umidade</dt>
+              <dd id="humidity" class="details__value"></dd>
+            </div>
+            <div class="details__item">
+              <dt class="details__label">Sensação térmica</dt>
+              <dd id="apparent-temperature" class="details__value"></dd>
+            </div>
+            <div class="details__item">
+              <dt class="details__label">Precipitação</dt>
+              <dd id="precipitation" class="details__value"></dd>
+            </div>
+            <div class="details__item">
+              <dt class="details__label">Vento</dt>
+              <dd id="wind" class="details__value"></dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
