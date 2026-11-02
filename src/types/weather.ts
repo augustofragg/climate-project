@@ -2,19 +2,19 @@
 
 /* ---------- Respostas cruas da API (snake_case) ---------- */
 
-export interface GeocodingResult {
+export type GeocodingResult = {
   name: string;
   latitude: number;
   longitude: number;
   country_code: string;
   timezone: string;
-}
+};
 
-export interface GeocodingResponse {
+export type GeocodingResponse = {
   results?: GeocodingResult[];
-}
+};
 
-export interface ForecastCurrent {
+export type ForecastCurrent = {
   time: string;
   temperature_2m: number;
   relative_humidity_2m: number;
@@ -25,34 +25,34 @@ export interface ForecastCurrent {
   precipitation_probability: number;
   weather_code: number;
   precipitation?: number;
-}
+};
 
 export type ForecastCurrentUnits = {
   [K in keyof ForecastCurrent]-?: string;
 };
 
-export interface ForecastResponse {
+export type ForecastResponse = {
   current?: ForecastCurrent;
   current_units?: ForecastCurrentUnits;
-}
+};
 
 // Resposta do forecast já validada (current e current_units presentes).
-export interface WeatherResult {
+export type WeatherResult = {
   current: ForecastCurrent;
   current_units: ForecastCurrentUnits;
-}
+};
 
 /* ---------- Tipos de domínio (camelCase) ---------- */
 
-export interface CityLocation {
+export type CityLocation = {
   name: string;
   latitude: number;
   longitude: number;
   countryCode: string;
   timezone: string;
-}
+};
 
-export interface CurrentWeather {
+export type CurrentWeather = {
   time: string; // "2026-10-28T17:45" (horário local da cidade)
   temperature: number;
   relativeHumidity: number;
@@ -70,9 +70,9 @@ export interface CurrentWeather {
     windDirection: string;
     precipitationProbability: string;
   };
-}
+};
 
-export interface CombinedWeatherData {
+export type CombinedWeatherData = {
   location: CityLocation;
   weather: CurrentWeather;
-}
+};
