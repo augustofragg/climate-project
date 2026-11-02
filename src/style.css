@@ -209,6 +209,17 @@ dd {
   color: var(--color-text-muted);
 }
 
+.sidebar__period {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.sidebar__period-icon {
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
 /* Área principal */
 
 .details {
@@ -238,4 +249,28 @@ dd {
 .details__value {
   font-size: 1.125rem;
   font-weight: 600;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  #app {
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .card {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .sidebar {
+    flex: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .details__grid {
+    grid-template-columns: 1fr;
+  }
 }
